@@ -6,7 +6,7 @@ DropboxFolderDownload lets you do perform an automated download of all files in 
 Use retrieve_dropbox_access_token.py to retrieve the access token.
 This is needed to authenticate without user interaction to dropbox.
 
-Use retrieve_recent_photos.py to download any dropbox folder.
+Use download_all_files_from_dropbox_folder.py to download any dropbox folder.
 Fill in the required fields in the script and you're ready to go.
 
 Prerequisites:

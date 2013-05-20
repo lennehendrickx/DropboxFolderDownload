@@ -14,7 +14,7 @@ parser.add_argument('--access_token_secret', help='Access Token Secret (get your
 parser.add_argument('--access_type', help='should be "dropbox" or "app_folder" as configured for your app',required=True)
 parser.add_argument('-s', '--dropbox_dir', help='Folder you want to download from Dropbox', default='/',  required=False)
 parser.add_argument('-d','--dest_dir',help='Folder where you want to download to (default: script_dir/download)', default=os.path.dirname(os.path.abspath(__file__)) + '/download' , required=False)
-parser.add_argument('-r', '--remove_downloaded_files', help='Remove files downloaded from dropbox remotely' action='store_true')
+parser.add_argument('-r','--remove_downloaded_files', help='Remove files downloaded from dropbox remotely', action='store_true')
 args = parser.parse_args()
 
 # functions
@@ -44,8 +44,10 @@ assure_path_exists(args.dest_dir)
 for file in files:
     dest_file = args.dest_dir + lreplace(args.dropbox_dir, '', file)
     print "Downloading file: %s to: %s" % (file, dest_file)
-    out = open(dest_file, 'wb')
-    out.write(client.get_file(file).read())
+    response = client.get_file(file)
+    with open(dest_file, 'wb') as out:
+        while not response.isclosed():
+            out.write(response.read(1024 * 1024))
     
 # remove files in args.dropbox_dir
 if args.remove_downloaded_files == True:

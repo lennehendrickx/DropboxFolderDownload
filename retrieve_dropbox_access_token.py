@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 # Include the Dropbox SDK libraries
 from dropbox import client, rest, session
+import argparse
 
 # parse commandline arguments
 parser = argparse.ArgumentParser(description='Download all files from a dropbox folder.')

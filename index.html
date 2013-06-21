@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Dropboxfolderdownload : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Dropboxfolderdownload</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/lennehendrickx/DropboxFolderDownload">View on GitHub</a>
+
+          <h1 id="project_title">Dropboxfolderdownload</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/lennehendrickx/DropboxFolderDownload/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/lennehendrickx/DropboxFolderDownload/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="dropboxfolderdownload" class="anchor" href="#dropboxfolderdownload"><span class="octicon octicon-link"></span></a>DropboxFolderDownload</h1>
+
+<p>DropboxFolderDownload lets you do perform an automated download of all files in a given dropbox folder.</p>
+
+<p>Use retrieve_dropbox_access_token.py to retrieve the access token.
+This is needed to authenticate without user interaction to dropbox.</p>
+
+<pre>
+usage: retrieve_dropbox_access_token.py [-h] --app_key APP_KEY --app_secret
+                                        APP_SECRET --access_type ACCESS_TYPE
+
+Retrieve dropbox access token
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --app_key APP_KEY     App Key (get your app key from the Dropbox developer
+                        website)
+  --app_secret APP_SECRET
+                        App Secret (get your app secret from the Dropbox
+                        developer website)
+  --access_type ACCESS_TYPE
+                        should be "dropbox" or "app_folder" as configured for
+                        your app
+</pre>
+
+<p>Use download_all_files_from_dropbox_folder.py to download any dropbox folder.</p>
+
+<pre>
+  usage: download_all_files_from_dropbox_folder.py [-h] --app_key APP_KEY
+                                                 --app_secret APP_SECRET
+                                                 --access_token_key
+                                                 ACCESS_TOKEN_KEY
+                                                 --access_token_secret
+                                                 ACCESS_TOKEN_SECRET
+                                                 --access_type ACCESS_TYPE
+                                                 [-s DROPBOX_DIR]
+                                                 [-d DEST_DIR] [-r]
+
+  Download all files from a dropbox folder.
+
+  optional arguments:
+    -h, --help            show this help message and exit
+    --app_key APP_KEY     App Key (get your app key from the Dropbox developer
+                        website)
+    --app_secret APP_SECRET
+                        App Secret (get your app secret from the Dropbox
+                        developer website)
+    --access_token_key ACCESS_TOKEN_KEY
+                        Access Token Key (get your access token key from
+                        retrieve_dropbox_access_token.py)
+    --access_token_secret ACCESS_TOKEN_SECRET
+                        Access Token Secret (get your access token secret from
+                        retrieve_dropbox_access_token.py)
+    --access_type ACCESS_TYPE
+                        should be "dropbox" or "app_folder" as configured for
+                        your app
+    -s DROPBOX_DIR, --dropbox_dir DROPBOX_DIR
+                        Folder you want to download from Dropbox
+    -d DEST_DIR, --dest_dir DEST_DIR
+                        Folder where you want to download to (default:
+                        script_dir/download)
+    -r, --remove_downloaded_files
+                        Remove files downloaded from dropbox remotely
+
+</pre>
+
+<p>Prerequisites:</p>
+
+<ul>
+<li>
+<p>Dropbox Python SDK </p>
+
+<pre>https://www.dropbox.com/developers/core/sdk</pre>
+</li>
+<li>
+<p>Argparse module (standard in 2.7 and up)</p>
+
+<pre>https://pypi.python.org/pypi/argparse</pre>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dropboxfolderdownload maintained by <a href="https://github.com/lennehendrickx">lennehendrickx</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
